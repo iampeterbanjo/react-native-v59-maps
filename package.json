@@ -8,13 +8,16 @@
     "make-dir": "mkdir -p android/app/src/main/assets android/app/src/main/res",
     "bundle-assets": "node node_modules/react-native/local-cli/cli.js bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "predev:android": "run-s make-dir bundle-assets",
+    "postinstall": "yarn jetify",
     "dev:android": "run-p android start",
     "dev:ios": "run-p ios start",
     "test": "jest"
   },
   "dependencies": {
+    "jetifier": "^1.6.4",
     "react": "16.8.3",
-    "react-native": "0.59.10"
+    "react-native": "0.59.10",
+    "react-native-maps": "0.26.1"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
