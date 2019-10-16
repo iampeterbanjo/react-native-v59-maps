@@ -19,7 +19,7 @@
     "jetifier": "^1.6.4",
     "react": "16.8.3",
     "react-native": "0.59.10",
-    "react-native-maps": "0.26.1"
+    "react-native-maps": "0.25.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",

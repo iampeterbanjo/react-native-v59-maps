@@ -9,6 +9,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text } from "react-native";
 import MapView from "react-native-maps";
+import pkg from "./package.json";
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -16,7 +17,7 @@ export default class App extends Component<Props> {
     mapBoundaries: ""
   };
   mapRef = null;
-  setMapRef = ref => (this.mapRef = ref); 
+  setMapRef = ref => (this.mapRef = ref);
 
   handleRegionChange = async () => {
     try {
@@ -28,9 +29,14 @@ export default class App extends Component<Props> {
   };
 
   render() {
+    const { dependencies: deps } = pkg;
     return (
       <>
         <Text>Map boundaries: {this.state.mapBoundaries}</Text>
+        <Text>
+          react-native: {deps["react-native"]}, react-native-maps:
+          {deps["react-native-maps"]}
+        </Text>
         <MapView
           ref={this.setMapRef}
           initialRegion={{
