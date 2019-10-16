@@ -9,9 +9,11 @@
     "bundle-assets": "node node_modules/react-native/local-cli/cli.js bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "predev:android": "run-s make-dir bundle-assets",
     "postinstall": "yarn jetify",
-    "dev:android": "run-p android start",
+    "dev:android": "run-p android start log:android",
     "dev:ios": "run-p ios start",
-    "test": "jest"
+    "test": "jest",
+    "log:android": "react-native log-android",
+    "watch:android": "nodemon --ext js -x 'run-s dev:android'"
   },
   "dependencies": {
     "jetifier": "^1.6.4",
@@ -25,6 +27,7 @@
     "babel-jest": "^24.9.0",
     "jest": "^24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
+    "nodemon": "^1.19.4",
     "npm-run-all": "^4.1.5",
     "react-test-renderer": "16.8.3"
   },
