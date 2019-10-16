@@ -13,7 +13,7 @@
     "dev:ios": "run-p ios start",
     "test": "jest",
     "log:android": "react-native log-android",
-    "watch:android": "nodemon --ext js -x 'run-s dev:android'"
+    "watch:android": "nodemon --ignore android --ignore ios -x 'run-s dev:android'"
   },
   "dependencies": {
     "jetifier": "^1.6.4",
